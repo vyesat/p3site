@@ -1,50 +1,59 @@
-import { useRef, useState } from 'react'
+import { useRef, useEffect } from 'react';
 
-function Videos() {
-  const introRef = useRef(null);
-  const loopRef = useRef(null);
+export default function Videos({ onStart, started }) {
+  const videoRef = useRef(null);
 
-  const [introDone, setIntroDone] = useState(false);
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
 
-  const handleIntroEnd = () => {
-    setIntroDone(true);
-    loopRef.current?.play().catch(err => {
-      console.log("Autoplay blocked:", err);
-    });
+    const handleEnded = () => {
+      // switch to loop and loop it
+      v.src = '/loop.mp4';
+      v.loop = true;
+      v.play().catch(() => {});
+    };
+
+    v.addEventListener('ended', handleEnded);
+    return () => v.removeEventListener('ended', handleEnded);
+  }, []);
+
+  const handleClickToPlay = async () => {
+    const v = videoRef.current;
+    if (!v) return;
+    // reveal the UI immediately
+    if (onStart) onStart();
+    try {
+      await v.play();
+    } catch (e) {
+      console.warn('video play failed', e);
+    }
   };
 
   return (
-    <div>
-      {/* INTRO VIDEO */}
+    <>
       <video
-        ref={introRef}
-        className="w-screen h-screen absolute top-0 left-0 object-fill z-20"
-        style={{
-          visibility: introDone ? "hidden" : "visible" // hide instantly, no reflow
-        }}
-        muted
-        autoPlay
+        ref={videoRef}
+        src="/intro.mp4"
+        preload="auto"
         playsInline
-        onEnded={handleIntroEnd}
-      >
-        <source src="intro.mp4" type="video/mp4" />
-      </video>
+        className="w-screen h-screen absolute top-0 left-0 object-cover z-0"
+      />
 
-      {/* LOOP VIDEO (always mounted) */}
-      <video
-        ref={loopRef}
-        className="w-screen h-screen absolute top-0 left-0 object-fill z-10"
-        style={{
-          visibility: introDone ? "visible" : "hidden"
-        }}
-        muted
-        loop
-        playsInline
-      >
-        <source src="loop.mp4" type="video/mp4" />
-      </video>
-    </div>
+      {!started && (
+        <div
+          className="intro-overlay"
+          role="button"
+          tabIndex={0}
+          onClick={handleClickToPlay}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') handleClickToPlay();
+          }}
+          aria-label="Click to play intro"
+        >
+          <div className="intro-text">click to play</div>
+        </div>
+      )}
+    </>
   );
 }
-
-export default Videos;

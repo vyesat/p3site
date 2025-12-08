@@ -151,18 +151,25 @@ function InfoBox({ onClose }) {
 
 function Page() {
   const [infoVisible, setInfoVisible] = useState(false);
+  const [started, setStarted] = useState(false); // NEW
 
   const toggleInfoBox = () => setInfoVisible(prev => !prev);
 
   return (
     <>
-      <Wallet />
-      <Footer />
-      
-      <List onItemClick={toggleInfoBox} />
-      {infoVisible && <InfoBox onClose={toggleInfoBox} />}
-      <Videos />
-      <MusicPlayer />
+      {/* Videos handles showing the intro + overlay; onStart sets started=true */}
+      <Videos onStart={() => setStarted(true)} started={started} />
+
+      {/* Interactive UI only shown after user click */}
+      {started && (
+        <>
+          <Wallet />
+          <Footer />
+          <List onItemClick={toggleInfoBox} />
+          {infoVisible && <InfoBox onClose={toggleInfoBox} />}
+          <MusicPlayer />
+        </>
+      )}
     </>
   );
 }

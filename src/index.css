@@ -1,63 +1,27 @@
-@import "tailwindcss";
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #27292c;
-  color: white;
-  overflow: hidden;
+/* overlay shown until first click */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 80; /* sits above your UI (your UI uses z-30 etc) */
+  background: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
 }
 
-@font-face {
-  font-family: 'rodin';
-  src: url('./assets/FOT-Rodin\ Pro\ UB.otf') format('opentype')
+/* centered text */
+.intro-text {
+  color: #fff;
+  font-size: 4rem;
+  font-family: inherit;
+  text-transform: lowercase;
+  letter-spacing: 0.08em;
+  user-select: none;
+  pointer-events: none;
 }
 
-@font-face {
-  font-family: 'fontsona';
-  src: url('./assets/Fontsona3FES.ttf') format('truetype')
-}
-
-
-@theme {  
-  --color-text-1: #10c9ff;  
-  --color-text-2: #6ce6fd;  
-  --color-text-3: #11cdfd;
-  --color-text-4: #387cf7;
-  --color-text-5: #397df8;
-}
-
-a:hover {
-  text-decoration: none;
-  color: black;
-}
-
-.list h1 a:hover {
-  background-image: url("whitetri.png");
-  background-size: 100% 100%;
-  animation: test 0.1s ;
-  animation-fill-mode: forwards;
-}
-
-.infobox.fade-in {
-  animation: fadeintoright 0.2s forwards;
-}
-
-.infobox.fade-out {
-  animation: fadeouttoleft 0.2s forwards;
-}
-
-@keyframes test {
-  0% {font-size: 100%;}
-  50% {font-size: 150%;}
-  100% {font-size: 120%;}
-}
-
-@keyframes fadeintoright {
-  0% {opacity: 0; transform: translateX(-100px);}
-  100% {opacity: 1; transform: translateX(0px);}
-}
-
-@keyframes fadeouttoleft {
-  0% {opacity: 1; transform: translateX(0px);}
-  100% {opacity: 0; transform: translateX(100px);}
+/* ensure background video sits behind UI */
+.w-screen.h-screen.absolute.top-0.left-0.object-cover {
+  z-index: 0;
 }
