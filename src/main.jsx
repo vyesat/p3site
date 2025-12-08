@@ -33,7 +33,7 @@ function MusicPlayer() {
   };
   return (
     <div className='z-30 absolute bottom-10 right-10 text-center font-[fontsona] text-2xl text-shadow-lg'>
-      <p  onClick={handleSongIndex} className='text-[15px] cursor-pointer'>click me to change song!</p>
+      <p  onClick={handleSongIndex} className='text-[15px] cursor-pointer'>click to change song</p>
       <h1 onClick={handleSongIndex} className="cursor-pointer">{songs[index].title}</h1>
       <h1 onClick={handleSongIndex} className="cursor-pointer">{songs[index].artist}</h1>
       <audio key={index} controls>
@@ -55,31 +55,31 @@ function List({ onItemClick }) {
   return (
     <div className="flex flex-col min-h-screen justify-center items-center z-30 font-[rodin] text-[8vh] tracking-[-0.15em] leading-[6.5vh] list">
       <h1 className='text-text-1 -rotate-15 z-30'>
-          <i><a href="#" onMouseEnter={move} onClick={handleClick}>ABOUT ME</a></i>
+          <i><a href="#" onMouseEnter={move} onClick={handleClick}>M1NIMOE</a></i>
       </h1>
       <h1 className='text-text-1 -rotate-8 z-30'>
-          <i><a href="#" onMouseEnter={move} onClick={handleClick}>ITEM</a></i>
+          <i><a href="#" onMouseEnter={move} onClick={handleClick}>ABOUT ME</a></i>
       </h1>
       <h1 className='text-text-2 -rotate-13 z-30'>
-          <i><a href="#" onMouseEnter={move} onClick={handleClick}>EQUIP</a></i>
+          <i><a href="#" onMouseEnter={move} onClick={handleClick}>DISCORD</a></i>
       </h1>
       <h1 className='text-text-2 -rotate-12 z-30'>
-          <i><a href="#" onMouseEnter={move} onClick={handleClick}>PERSONA</a></i>
+          <i><a href="#" onMouseEnter={move} onClick={handleClick}>SPOTIFY</a></i>
       </h1>
       <h1 className='text-text-3 rotate-2 z-30'>
-          <i><a href="#" onMouseEnter={move} onClick={handleClick}>STATS</a></i>
+          <i><a href="#" onMouseEnter={move} onClick={handleClick}>TIKTOK</a></i>
       </h1>
       <h1 className='text-text-4 -rotate-10 z-30'>
-          <i><a href="#" onMouseEnter={move} onClick={handleClick}>QUEST</a></i>
+          <i><a href="#" onMouseEnter={move} onClick={handleClick}>STEAM</a></i>
       </h1>
       <h1 className='text-text-4 -rotate-3 z-30'>
-          <i><a href="#" onMouseEnter={move} onClick={handleClick}>SOCIAL LINK</a></i>
+          <i><a href="#" onMouseEnter={move} onClick={handleClick}>ROBLOX</a></i>
       </h1>
       <h1 className='text-text-5 -rotate-1 z-30'>
-          <i><a href="#" onMouseEnter={move} onClick={handleClick}>CALENDAR</a></i>
+          <i><a href="#" onMouseEnter={move} onClick={handleClick}>WEBSITE</a></i>
       </h1>
       <h1 className='text-text-1 rotate-10 z-30'>
-          <i><a href="#" onMouseEnter={move} onClick={handleClick}>SYSTEM</a></i>
+          <i><a href="#" onMouseEnter={move} onClick={handleClick}>CREDITS</a></i>
       </h1>
     </div>
   )
@@ -143,7 +143,7 @@ function InfoBox({ onClose }) {
         
       />
       <div className='absolute max-w-[30vw] max-h-[30vw] overflow-visible'>
-        <h1 className=' text-white font-[fontsona] text-[2vh]'>Hello! I'm Myles. I coded this website because I was bored in class. I hope you like it!</h1>
+        <h1 className=' text-white font-[fontsona] text-[2vh]'>hi im m1nimoe</h1>
       </div>
     </div>
   );
