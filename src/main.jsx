@@ -97,13 +97,13 @@ function List() {
   const headers = [
     { label: "M1NIMOE", type: "none", className: "text-text-1 -rotate-15 z-30" },
     { label: "ABOUT ME", type: "infobox", text: "hi im m1nimoe", className: "text-text-1 -rotate-8 z-30" },
-    { label: "DISCORD", type: "link", url: "https://discord.com/users/m1nimoe", className: "text-text-2 -rotate-13 z-30" },
-    { label: "SPOTIFY", type: "link", url: "https://open.spotify.com/user/m1nimoe", className: "text-text-2 -rotate-12 z-30" },
+    { label: "DISCORD", type: "link", url: "https://discord.com/users/640262833703223306", className: "text-text-2 -rotate-13 z-30" },
+    { label: "SPOTIFY", type: "link", url: "https://open.spotify.com/user/31l7vc724ljbrpq5nc4cni6jhuea?si=54da1213183d4993", className: "text-text-2 -rotate-12 z-30" },
     { label: "TIKTOK", type: "link", url: "https://www.tiktok.com/@m1nimoe", className: "text-text-3 rotate-2 z-30" },
-    { label: "STEAM", type: "link", url: "https://steamcommunity.com/id/m1nimoe", className: "text-text-4 -rotate-10 z-30" },
-    { label: "ROBLOX", type: "link", url: "https://www.roblox.com/users/m1nimoe/profile", className: "text-text-4 -rotate-3 z-30" },
-    { label: "WEBSITE", type: "infobox", text: "Welcome to my website!", className: "text-text-5 -rotate-1 z-30" },
-    { label: "CREDITS", type: "infobox", text: "Website created by m1nimoe", className: "text-text-1 rotate-10 z-30" },
+    { label: "STEAM", type: "link", url: "https://steamcommunity.com/profiles/76561199663342332/", className: "text-text-4 -rotate-10 z-30" },
+    { label: "ROBLOX", type: "link", url: "https://www.roblox.com/users/1463554151", className: "text-text-4 -rotate-3 z-30" },
+    { label: "WEBSITE", type: "infobox", text: "website made by esat", className: "text-text-5 -rotate-1 z-30" },
+    { label: "CREDITS", type: "infobox", text: "credits to @mylesXD on github for most of the code and assets", className: "text-text-1 rotate-10 z-30" },
   ];
 
   const [infoVisible, setInfoVisible] = useState(false);
