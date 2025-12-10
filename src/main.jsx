@@ -97,7 +97,7 @@ function List() {
   const headers = [
     { label: "M1NIMOE", type: "none", className: "text-text-1 -rotate-15 z-30" },
     { label: "ABOUT ME", type: "infobox", text: "hi im m1nimoe", className: "text-text-1 -rotate-8 z-30" },
-    { label: "DISCORD", type: "link", url: "https://discord.com/users/640262833703223306", className: "text-text-2 -rotate-13 z-30" },
+    { label: "DISCORD", type: "link", url: "https://discordapp.com/users/640262833703223306", className: "text-text-2 -rotate-13 z-30" },
     { label: "SPOTIFY", type: "link", url: "https://open.spotify.com/user/31l7vc724ljbrpq5nc4cni6jhuea?si=54da1213183d4993", className: "text-text-2 -rotate-12 z-30" },
     { label: "TIKTOK", type: "link", url: "https://www.tiktok.com/@m1nimoe", className: "text-text-3 rotate-2 z-30" },
     { label: "STEAM", type: "link", url: "https://steamcommunity.com/profiles/76561199663342332/", className: "text-text-4 -rotate-10 z-30" },
