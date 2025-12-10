@@ -139,7 +139,7 @@ function InfoBox({ onClose }) {
       onClick={handleClose}
     >
       <img
-        src="/info ui box.png"
+        src="/infouibox.png"
         
       />
       <div className='absolute max-w-[30vw] max-h-[30vw] overflow-visible'>
