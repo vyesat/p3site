@@ -82,7 +82,7 @@ function InfoBox({ text, onClose }) {
       className={`absolute inset-0 flex min-h-screen z-40 items-center justify-center infobox ${closing ? "fade-out" : "fade-in"} cursor-pointer`}
       onClick={handleClose}
     >
-      <img src="/p3site/infouibox.png" />
+      <img src="/infouibox.png" />
       <div className='absolute max-w-[30vw] max-h-[30vw] overflow-visible'>
         <h1 className='text-white font-[fontsona] text-[2vh]'>{text}</h1>
       </div>
